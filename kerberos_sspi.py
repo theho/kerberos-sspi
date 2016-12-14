@@ -183,7 +183,7 @@ def authGSSClientInit(service, gssflags=GSS_C_MUTUAL_FLAG|GSS_C_SEQUENCE_FLAG):
     """
 
     spn=_sspi_spn_from_nt_service_name(service)
-    ctx={"csa":sspi.ClientAuth("Kerberos", scflags=gssflags, targetspn=spn),
+    ctx={"csa":sspi.ClientAuth("Negotiate", scflags=gssflags, targetspn=spn),
          "service":service,
          "gssflags":gssflags,
          "response":None
